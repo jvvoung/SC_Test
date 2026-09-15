@@ -1,0 +1,53 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="SKCTPractice.Views.QuestionPanel">
+  <UserControl.Styles>
+    <Style Selector="Border.question-row">
+      <Setter Property="Background" Value="White" />
+      <Setter Property="BorderBrush" Value="#E3E6EB" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="6" />
+      <Setter Property="Margin" Value="0,0,0,4" />
+      <Setter Property="Padding" Value="4" />
+      <Setter Property="MinHeight" Value="35" />
+    </Style>
+    <Style Selector="Border.question-row.current">
+      <Setter Property="Background" Value="#FFF3F6" />
+      <Setter Property="BorderBrush" Value="#EB1744" />
+      <Setter Property="BorderThickness" Value="1.5" />
+    </Style>
+    <Style Selector="Button.answer">
+      <Setter Property="Width" Value="23" />
+      <Setter Property="Height" Value="23" />
+      <Setter Property="MinHeight" Value="23" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="CornerRadius" Value="12" />
+      <Setter Property="FontSize" Value="11" />
+      <Setter Property="Margin" Value="1" />
+    </Style>
+    <Style Selector="Button.answer.selected">
+      <Setter Property="Background" Value="#EB1744" />
+      <Setter Property="Foreground" Value="White" />
+      <Setter Property="BorderBrush" Value="#EB1744" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+  </UserControl.Styles>
+
+  <Border Classes="card">
+    <Grid RowDefinitions="Auto,*">
+      <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="9,8,7,8">
+        <TextBlock x:Name="ProgressText" Text="0 / 20" FontWeight="SemiBold" FontSize="15"
+                   VerticalAlignment="Center" />
+        <Button x:Name="ResetAnswersButton" Grid.Column="1" Content="초기화" Padding="8,4" MinHeight="27" />
+      </Grid>
+
+      <Border Grid.Row="1" BorderBrush="#E3E6EB" BorderThickness="0,1,0,1">
+        <ScrollViewer x:Name="QuestionScrollViewer" VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled">
+          <StackPanel x:Name="QuestionRowsHost" Margin="5,6,5,2" />
+        </ScrollViewer>
+      </Border>
+
+    </Grid>
+  </Border>
+</UserControl>

@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SKCTPractice.Views.ConfirmationDialog"
+        Title="확인"
+        Width="360" Height="155"
+        MinWidth="320" MinHeight="150"
+        CanResize="False"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner">
+  <Grid RowDefinitions="*,Auto" Margin="22,18,22,16">
+    <TextBlock x:Name="MessageText" TextWrapping="Wrap" VerticalAlignment="Center"
+               HorizontalAlignment="Center" TextAlignment="Center" FontSize="14" />
+    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="8">
+      <Button x:Name="NoButton" Content="아니오" Width="82" />
+      <Button x:Name="YesButton" Content="예" Width="82" Classes="accent" />
+    </StackPanel>
+  </Grid>
+</Window>

@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="SKCTPractice.Views.TimerPanel">
+  <UserControl.Styles>
+    <Style Selector="TextBlock.timer-critical">
+      <Setter Property="Foreground" Value="#EB1744" />
+    </Style>
+  </UserControl.Styles>
+  <Border Classes="card" Padding="10,8">
+    <Grid RowDefinitions="Auto,Auto,Auto">
+      <TextBlock Text="남은 시간" Classes="section-title" HorizontalAlignment="Center" />
+      <TextBlock x:Name="TimeText" Grid.Row="1" Text="15:00" FontSize="29" FontWeight="SemiBold"
+                 HorizontalAlignment="Center" Margin="0,2,0,5" />
+      <Grid Grid.Row="2" ColumnDefinitions="*,*,*" ColumnSpacing="4">
+        <Button x:Name="StartButton" Content="시작" Classes="accent" MinHeight="38"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="3" FontSize="12" />
+        <Button x:Name="PauseButton" Grid.Column="1" Content="일시정지" MinHeight="38"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="3" FontSize="11" />
+        <Button x:Name="ResetButton" Grid.Column="2" Content="초기화" MinHeight="38"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="3" FontSize="12" />
+      </Grid>
+    </Grid>
+  </Border>
+</UserControl>

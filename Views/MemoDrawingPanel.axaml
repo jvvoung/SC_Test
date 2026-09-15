@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:SKCTPractice.Controls"
+             x:Class="SKCTPractice.Views.MemoDrawingPanel">
+  <UserControl.Styles>
+    <Style Selector="Button.tab-button">
+      <Setter Property="Padding" Value="3,4" />
+      <Setter Property="MinHeight" Value="28" />
+      <Setter Property="FontSize" Value="11" />
+    </Style>
+    <Style Selector="Button.tab-button.active">
+      <Setter Property="Foreground" Value="#EB1744" />
+      <Setter Property="BorderBrush" Value="#EB1744" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+  </UserControl.Styles>
+
+  <Border Classes="card">
+    <Grid RowDefinitions="Auto,*">
+      <Grid ColumnDefinitions="Auto,Auto,*" ColumnSpacing="4" Margin="7,7,7,6">
+        <Button x:Name="MemoTabButton" Content="메모장" Classes="tab-button active" />
+        <Button x:Name="DrawingTabButton" Grid.Column="1" Content="그림판" Classes="tab-button" />
+        <Button x:Name="ClearAllButton" Grid.Column="2" Content="전체 지우기" HorizontalAlignment="Right"
+                Padding="3,4" MinHeight="28" FontSize="11" />
+      </Grid>
+
+      <Grid Grid.Row="1" Margin="7,0,7,7">
+        <TextBox x:Name="MemoTextBox" AcceptsReturn="True" TextWrapping="Wrap"
+                 Watermark="메모..." ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" Padding="8" />
+        <Border x:Name="DrawingHost" IsVisible="False" BorderBrush="#D9DDE4" BorderThickness="1"
+                CornerRadius="5" Background="White">
+          <controls:DrawingCanvas x:Name="DrawingCanvas" MinHeight="120" />
+        </Border>
+      </Grid>
+    </Grid>
+  </Border>
+</UserControl>
