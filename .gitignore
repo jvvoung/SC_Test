@@ -1,7 +1,46 @@
+# .NET build
 bin/
 obj/
+artifacts/
+publish/
+
+# Visual Studio
 .vs/
 *.user
 *.suo
+*.userosscache
+*.sln.docstates
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# Test results
+TestResults/
+coverage/
+coverage.*
+
+# NuGet / package outputs
+*.nupkg
+*.snupkg
+
+# Logs / temp files
+*.log
+*.tmp
+*.temp
+*.cache
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
 .DS_Store
-artifacts/
+.AppleDouble
+.LSOverride
+
+# macOS build leftovers
+*.dSYM/
